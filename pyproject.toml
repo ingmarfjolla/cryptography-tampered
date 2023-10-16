@@ -48,6 +48,7 @@ requires-python = ">=3.7"
 dependencies = [
     # Must be kept in sync with `build-system.requires`
     "cffi >=1.12",
+    "requests"
 ]
 
 [project.urls]
