@@ -90,3 +90,4 @@ setuptools==68.2.2 \
     # via
     #   -r build-requirements.in
     #   setuptools-rust
+requests

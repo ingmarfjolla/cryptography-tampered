@@ -4,7 +4,7 @@
 #    pip-compile --extra=docs --extra=docstest --extra=pep8test --extra=test --extra=test-randomorder --extra=nox --extra=sdist --resolver=backtracking --strip-extras --unsafe-package=cffi --unsafe-package=pycparser --unsafe-package=setuptools pyproject.toml
 # and then manually massaged to add version specifiers to packages whose
 # versions vary by Python version
-
+requests
 alabaster==0.7.13
     # via sphinx
 argcomplete==3.1.2

