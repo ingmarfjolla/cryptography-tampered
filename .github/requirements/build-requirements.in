@@ -1,6 +1,7 @@
 # Must be kept sync with build-system.requires at pyproject.toml
 setuptools>=61.0.0
 wheel
+requests
 cffi>=1.12; platform_python_implementation != 'PyPy'
 setuptools-rust>=0.11.4
 
